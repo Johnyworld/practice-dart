@@ -1,3 +1,12 @@
+int add(int a, int b) {
+  return a + b;
+}
+
+int fibonacci(int n) {
+  if (n == 0 || n == 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 void main() {
   print('hello world');
 
@@ -24,4 +33,51 @@ void main() {
   // 오브젝트
   Map person = {'name': name, 'age': ages[1]};
   print(person);
+
+  var year = 2000;
+  print(year);
+
+  final int aoa = 123;
+  print(aoa);
+
+  final pi2 = 3.14;
+  print(pi2);
+
+  const pi3 = 3.14;
+  print(pi3);
+
+  print('===== if else =====');
+  bool b = year > 2000;
+  if (b) {
+    print('21세기');
+  } else if (year < 2000) {
+    print('20세기');
+  } else {
+    print('밀레니엄! 21세기의 시작');
+  }
+
+  print('===== for =====');
+  for (int month = 1; month <= 12; month++) {
+    print(month);
+  }
+
+  print('===== for in =====');
+  for (var age in ages) {
+    print(age);
+  }
+
+  print('===== while =====');
+  while (year < 2020) {
+    year += 2;
+    print(year);
+  }
+
+  print('===== function =====');
+  print(add(13, 35));
+
+  print(fibonacci(20));
+
+  ages.where((age) => age >= 11).forEach(print);
 }
+
+// 11:49
