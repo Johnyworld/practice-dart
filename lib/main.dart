@@ -1,11 +1,5 @@
-int add(int a, int b) {
-  return a + b;
-}
-
-int fibonacci(int n) {
-  if (n == 0 || n == 1) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
-}
+import 'math.dart';
+import 'Person.dart';
 
 void main() {
   print('hello world');
@@ -77,7 +71,13 @@ void main() {
 
   print(fibonacci(20));
 
-  ages.where((age) => age >= 11).forEach(print);
+  print('===== where and forEach =====');
+  ages.where((age) => age >= 11).forEach(print); // [11, 12]
+
+  print('===== Class =====');
+  Person user = Person(20, 'Rocky Martin');
+  print({'age': user.age, 'name': user.name});
+  user.study();
 }
 
-// 11:49
+// 43:08
