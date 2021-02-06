@@ -33,7 +33,7 @@ class Piloted {
 }
 
 class MockSpaceship implements Spacecraft {
-  // implements란, 상위클래스의 뼈대를 이용해서 새로운 클래스를 만드는 일.
+  // implements(도구): 상위클래스의 뼈대를 이용해서 새로운 클래스를 만듦.
   @override
   DateTime launchDate;
 
