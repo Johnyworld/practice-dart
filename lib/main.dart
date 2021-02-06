@@ -7,4 +7,5 @@ void main() {
   datatype();
   ifElseAndFor();
   functionAndClass();
+  spacecraft();
 }
