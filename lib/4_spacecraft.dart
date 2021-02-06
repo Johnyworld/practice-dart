@@ -25,9 +25,35 @@ class Spacecraft {
   }
 }
 
+class Piloted {
+  int astronauts = 1;
+  void describeCrew() {
+    print('Number of astronauts: $astronauts');
+  }
+}
+
+class PilotedCraft extends Spacecraft with Piloted {
+  PilotedCraft(String name, DateTime launchDate) : super(name, launchDate);
+}
+
+class Orbiter extends Spacecraft {
+  double altitude;
+  Orbiter(String name, DateTime launchDate, this.altitude)
+      : super(name, launchDate);
+
+  @override
+  void describe() {
+    super.describe();
+    print('Atitude: $altitude');
+  }
+}
+
 void spacecraft() {
   Spacecraft myShip = Spacecraft('하이페리온', DateTime.now());
   Spacecraft yourShip = Spacecraft.unlaunched('나로');
+  Orbiter orbiter = Orbiter('아비터', DateTime.now(), 12.333);
+  PilotedCraft theyShip = PilotedCraft('슈페리온', DateTime.now());
+
   print('1호기: ${myShip.name}, 발사일: ${myShip.launchDate}');
   print('2호기: ${yourShip.name}, 발사일: ${yourShip.launchDate}');
   print(myShip.launchDate);
@@ -36,4 +62,9 @@ void spacecraft() {
   myShip.describe();
   print('2호기 ===');
   yourShip.describe();
+  print('궤도선 ===');
+  orbiter.describe();
+  print('3호기 ===');
+  theyShip.describe();
+  theyShip.describeCrew();
 }
